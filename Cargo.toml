@@ -1,0 +1,19 @@
+[package]
+name = "onnx-basic-test"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+crate-type = ["cdylib"]
+
+
+[dependencies]
+env_logger = "0.11.5"
+image = { version = "0.25.2", default-features = false, features = ["jpeg"] }
+log = "0.4.22"
+ndarray = "0.16.1"
+pollster = "0.3"
+wit-bindgen = "0.24"
+# wonnx = "0.5"
+wonnx = { path = "../../wasi/wonnx/wonnx" }
