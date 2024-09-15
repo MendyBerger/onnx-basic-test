@@ -26,7 +26,8 @@ pub async fn run() {
     for i in 0..10 {
         log::info!(
             "Infered result: {} of class: {}",
-            class_labels[probabilities[i].0], probabilities[i].0
+            class_labels[probabilities[i].0],
+            probabilities[i].0
         );
     }
 }
@@ -68,11 +69,11 @@ pub fn load_image() -> ndarray::ArrayBase<ndarray::OwnedRepr<f32>, ndarray::Dim<
     //     .resize_to_fill(224, 224, FilterType::Nearest)
     //     .to_rgb8();
 
-    let image_buffer: ImageBuffer<Rgb<u8>, Vec<u8>> = image::load_from_memory(include_bytes!("../input.jpeg"))
-        .unwrap()
-        .resize_to_fill(224, 224, FilterType::Nearest)
-        .to_rgb8();
-
+    let image_buffer: ImageBuffer<Rgb<u8>, Vec<u8>> =
+        image::load_from_memory(include_bytes!("../input.jpeg"))
+            .unwrap()
+            .resize_to_fill(224, 224, FilterType::Nearest)
+            .to_rgb8();
 
     // Python:
     // # image[y, x, RGB]

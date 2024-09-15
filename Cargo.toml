@@ -14,6 +14,6 @@ image = { version = "0.25.2", default-features = false, features = ["jpeg"] }
 log = "0.4.22"
 ndarray = "0.16.1"
 pollster = "0.3"
-wit-bindgen = "0.24"
+wasi = "=0.13.1"
 # wonnx = "0.5"
 wonnx = { path = "../../wasi/wonnx/wonnx" }
