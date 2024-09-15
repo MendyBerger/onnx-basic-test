@@ -1,13 +1,38 @@
 mod simple_graph;
 mod squeeze;
+mod mnist;
 
 struct MyCliRunner;
 
 impl wasi::exports::cli::run::Guest for MyCliRunner {
     fn run() -> Result<(), ()> {
+        std::panic::set_hook(Box::new(|info: _| {
+            let s = format!("panic message: {info}");
+            let stdout = wasi::cli::stdout::get_stdout();
+            stdout.blocking_write_and_flush(s.as_bytes()).unwrap();
+        }));
+
         WasiLogger::init();
 
-        pollster::block_on(squeeze::run());
+        log::info!("\nchoose example\n1: simple graph\n2: squeeze\n3: mnist\n");
+        let stdin = wasi::cli::stdin::get_stdin();
+        let input = stdin.blocking_read(1).unwrap();
+        let input = String::from_utf8(input).unwrap();
+        log::info!("{input}");
+        match input.as_str() {
+            "1" => {
+                pollster::block_on(simple_graph::run()).unwrap();
+            },
+            "2" => {
+                pollster::block_on(squeeze::run());
+            },
+            "3" => {
+                pollster::block_on(mnist::run());
+            }
+            s => {
+                todo!("{s} not found")
+            }
+        };
 
         Ok(())
     }
