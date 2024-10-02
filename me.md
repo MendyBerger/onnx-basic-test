@@ -7,11 +7,11 @@ wasm-tools component new ./target/wasm32-unknown-unknown/release/onnx_basic_test
 
 
 
-copy onnx_basic_test_component.wasm to root of wgpu
+copy onnx_basic_test_component.wasm to root of graphtime
 
-run in root of wgpu
+run in root of graphtime
 ```shell
-cargo +1.77 run --bin wgpu-examples-wasi --features="wasi-runtime" hello_compute
+cargo run ./onnx_basic_test_component.wasm
 ```
 
 

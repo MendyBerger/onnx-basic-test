@@ -2,8 +2,6 @@ use std::collections::HashMap;
 use std::convert::TryInto;
 
 use image::{imageops::FilterType, ImageBuffer, Pixel, Rgb};
-use std::path::Path;
-use std::time::Instant;
 use wonnx::utils::OutputTensor;
 
 // Args Management

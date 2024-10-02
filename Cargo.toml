@@ -9,11 +9,10 @@ crate-type = ["cdylib"]
 
 
 [dependencies]
-env_logger = "0.11.5"
 image = { version = "0.25.2", default-features = false, features = ["jpeg"] }
 log = "0.4.22"
 ndarray = "0.16.1"
 pollster = "0.3"
 wasi = "=0.13.1"
-# wonnx = "0.5"
-wonnx = { path = "../../wasi/wonnx/wonnx" }
+# wonnx = { path = "../wonnx/wonnx" }
+wonnx = { git = "https://github.com/wasi-gfx/wonnx.git", rev = "7136da4f1b3cd1f70acab2572a2cbc0c2c9eec7a" }
