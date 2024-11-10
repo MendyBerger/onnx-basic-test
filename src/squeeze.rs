@@ -70,7 +70,7 @@ pub fn load_image() -> ndarray::ArrayBase<ndarray::OwnedRepr<f32>, ndarray::Dim<
     //     .to_rgb8();
 
     let image_buffer: ImageBuffer<Rgb<u8>, Vec<u8>> =
-        image::load_from_memory(include_bytes!("../input.jpeg"))
+        image::load_from_memory(include_bytes!("../airplane.jpg"))
             .unwrap()
             .resize_to_fill(224, 224, FilterType::Nearest)
             .to_rgb8();
