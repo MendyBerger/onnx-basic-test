@@ -7,7 +7,7 @@ wasm-tools component new ./target/wasm32-unknown-unknown/release/onnx_basic_test
 
 
 
-copy onnx_basic_test_component.wasm to root of graphtime
+copy onnx_basic_test_component.wasm to root of [graphtime](https://github.com/MendyBerger/onnx-basic-test/blob/main/me.md)
 
 run in root of graphtime
 ```shell
