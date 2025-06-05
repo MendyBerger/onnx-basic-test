@@ -15,4 +15,4 @@ ndarray = "0.16.1"
 pollster = "0.3"
 wasi = "=0.13.1"
 # wonnx = { path = "../wonnx/wonnx" }
-wonnx = { git = "https://github.com/wasi-gfx/wonnx.git", rev = "7136da4f1b3cd1f70acab2572a2cbc0c2c9eec7a" }
+wonnx = { git = "https://github.com/wasi-gfx/wonnx.git", rev = "8db2f9d5c5a45d4421f37dc3c2b4f57d1090b377" }
